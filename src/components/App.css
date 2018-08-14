@@ -26,3 +26,34 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.title {
+  font-size: 50px;
+}
+
+.header {
+  background: black;
+  height: 46px;
+  font-family: Georgia;
+  font-size: 24px;
+  color: white;
+  padding: 10px 30px;
+}
+
+.editor {
+  flex: 1;
+  width: 45%;
+}
+
+#output {
+  padding: 15px;
+}
+
+.BigPreview {
+  width: 100%;
+  height: 100%;
+}
+
+#BigPreview {
+  padding: 15px;
+}
