@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import './App.css'
+import axios from 'axios'
+import medium from 'medium-sdk'
 import Header from './Header'
 import Welcome from './Welcome'
-// import NewProject from './NewProject'
 import Preview from './Preview'
 import SideBar from './SideBar'
 import BigPreview from './BigPreview'
+import PostButton from './PostButton'
+import PostMedium from './PostMedium'
+
+import client from '../authorizeMedium'
+
 
 class App extends Component {
   constructor(props) {
@@ -13,7 +19,15 @@ class App extends Component {
     this.state = {
       code: '# Say what?',
       isClick: false,
+      isPost: false,
+      imgUrl: '',
+      userID: '',
+      url: '',
     }
+  }
+
+  componentDidMount() {
+    this.fetchMediumUser()
   }
 
   onChange = (newValue, e) => {
@@ -24,12 +38,70 @@ class App extends Component {
     this.setState({ isClick: !this.state.isClick })
   }
 
+  onChangeByPost = () => {
+    this.setState({ isPost: !this.state.isPost })
+  }
+
+  fetchMediumUser = () => {
+    const url = 'https://api.medium.com/v1/me'
+    const authOption = {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${process.env.REACT_APP_MEDIUM_API}`,
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Accept-Charset': 'utf-8',
+      },
+    }
+    return fetch(url, authOption)
+      .then(res => res.json())
+      .then((json) => {
+        console.log(json)
+        this.setState({
+          imgUrl: json.data.imageUrl,
+          userID: json.data.id,
+          url: json.data.url,
+        })
+      })
+      .catch(err => err)
+  }
+
+  postToMedium = (title = 'post from reactron', tags = []) => {
+    const {
+      code,
+      userID,
+    } = this.state
+    console.log(userID, code)
+    const info = {
+      userId: userID,
+      title,
+      contentFormat: medium.PostContentFormat.MARKDOWN,
+      content: code,
+      tags,
+      publishStatus: medium.PostPublishStatus.DRAFT,
+    }
+    client.createPost(info, (err, post) => console.log(post))
+  }
+
+
   render() {
-    if (this.state.isClick) {
+    const {
+      code, userID, userImg, imgUrl, url, isClick, isPost,
+    } = this.state
+
+    if (isPost) {
+      return (
+        <PostMedium postToMedium={this.postToMedium} onChangeByPost={this.onChangeByPost} />
+      )
+    }
+
+    if (isClick) {
       return (
         <div>
           <Header style={{ width: '100%', height: '30' }} />
-          <BigPreview className="" code={this.state.code} onChangeClick={this.onChangeClick} />
+          <BigPreview code={code} onChangeClick={this.onChangeClick} />
+          <PostButton userData={userID} imgUrl={imgUrl} />
         </div>
       )
     }
@@ -37,10 +109,10 @@ class App extends Component {
       <div>
         <Header style={{ width: '100%', height: '30' }} />
         <div style={{ width: '100%', height: '100%', display: 'flex' }}>
-          <SideBar />
-          <Welcome code={this.state.code} onChange={this.onChange} className="editor" />
-          <Preview code={this.state.code} className="editor" onChangeClick={this.onChangeClick} />
-          {/* <NewProject style={{ width: '500px', height: '700px' }} /> */}
+          <SideBar imgUrl={imgUrl} userUrl={url} onChange={this.onChange} data={code} />
+          <Welcome code={code} onChange={this.onChange} className="editor" />
+          <Preview code={code} className="editor" onChangeClick={this.onChangeClick} />
+          <PostButton code={code} userData={userID} userImg={userImg} onChangeByPost={this.onChangeByPost} />
         </div>
       </div>
     )

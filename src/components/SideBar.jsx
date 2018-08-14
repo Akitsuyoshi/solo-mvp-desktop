@@ -1,17 +1,23 @@
 import React, { Component } from 'react'
 import './App.css'
-import RequestButton from './RequestButton'
 
+import HeaderButton from './buttonsForMarkdown/HeaderButton'
 
-class NewProject extends Component {
+class SideBar extends Component {
+  constructor(props) {
+    super(props)
+  }
+
   render() {
     return (
-      <div>
-        <img src="./github.png" />
-        <RequestButton />
+      <div className="sidebar">
+        <a href={this.props.userUrl} target="_blank">
+          <img src={this.props.imgUrl} className="userImg" />
+        </a>
+        <HeaderButton data={this.props.data} onChange={this.props.onChange} />
       </div>
     )
   }
 }
 
-export default NewProject
+export default SideBar
