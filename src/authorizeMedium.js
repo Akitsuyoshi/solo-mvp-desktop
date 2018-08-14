@@ -9,7 +9,7 @@ const client = new medium.MediumClient({
 
 // const redirectURL = 'https://pure-plateau-79856.herokuapp.com/'
 
-const accessToken = '20b3d32873174a7090189046b2facee73fb5831c9ba937111ff0cdcc8178a89ef'
+const accessToken = process.env.REACT_APP_MEDIUM_API
 
 client.setAccessToken(accessToken)
 

@@ -14,6 +14,19 @@
   version "8.10.25"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.25.tgz#801fe4e39372cef18f268db880a5fbfcf71adc7e"
 
+"@types/prop-types@*":
+  version "15.5.5"
+  resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.5.tgz#17038dd322c2325f5da650a94d5f9974943625e3"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react@*":
+  version "16.4.9"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.9.tgz#98b4dba5a0419dbd594f5dbbb2479e1e153431bb"
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"
@@ -2034,6 +2047,10 @@ cssom@0.3.x, "cssom@>= 0.3.2 < 0.4.0":
   resolved "https://registry.yarnpkg.com/cssstyle/-/cssstyle-0.2.37.tgz#541097234cb2513c83ceed3acddc27ff27987d54"
   dependencies:
     cssom "0.3.x"
+
+csstype@^2.2.0:
+  version "2.5.6"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.5.6.tgz#2ae1db2319642d8b80a668d2d025c6196071e788"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -4971,6 +4988,10 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+marked@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.4.0.tgz#9ad2c2a7a1791f10a852e0112f77b571dce10c66"
+
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "https://registry.yarnpkg.com/math-expression-evaluator/-/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
@@ -5164,6 +5185,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkdirp@
 moment@2.x.x:
   version "2.22.2"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+
+monaco-editor@^0.14.2:
+  version "0.14.2"
+  resolved "https://registry.yarnpkg.com/monaco-editor/-/monaco-editor-0.14.2.tgz#6c41773639aef7ebce30202cd12a723074a88813"
 
 moo@^0.4.3:
   version "0.4.3"
@@ -6390,6 +6415,14 @@ react-error-overlay@^4.0.0:
 react-is@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
+
+react-monaco-editor@^0.18.0:
+  version "0.18.0"
+  resolved "https://registry.yarnpkg.com/react-monaco-editor/-/react-monaco-editor-0.18.0.tgz#098d847733667905aee80a0cd2473e80ab7b1302"
+  dependencies:
+    "@types/react" "*"
+    monaco-editor "^0.14.2"
+    prop-types "^15.6.2"
 
 react-reconciler@^0.7.0:
   version "0.7.0"
