@@ -10,23 +10,26 @@ class RequestButton extends Component {
     super(props)
   }
 
-  componentDidMount() {
-  }
-
   fetchMediumUser = (e) => {
     e.preventDefault()
-    // const callbackURL = 'https://pure-plateau-79856.herokuapp.com/'
-    // const url = `https://medium.com/m/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=basicProfile,publishPost&state=requestResult&response_type=code&redirect_uri=${callbackURL}`
+    const url = 'https://api.medium.com/v1/me'
+    const authOption = {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${process.env.REACT_APP_MEDIUM_API}`,
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Accept-Charset': 'utf-8',
+      },
+    }
 
-    // axios.get(url)
-    //   .then((res) => {
-    //     const person = res.data
-    //   })
-    //   .catch(err => console.log(err))
-    client.getUser((err, user) => {
-      if (err) throw err
-      console.log(user)
-    })
+    return fetch(url, authOption)
+      .then((res) => {
+        res.json()
+        console.log(res)
+      })
+      .catch(err => err)
   }
 
   render() {

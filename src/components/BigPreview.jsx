@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import * as mark from 'marked'
-import { width } from 'window-size'
 
 class Preview extends Component {
   constructor(props) {

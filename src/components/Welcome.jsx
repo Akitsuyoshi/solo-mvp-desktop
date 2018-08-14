@@ -7,7 +7,6 @@ class Welcome extends Component {
   }
 
   editorDidMount(editor, monaco) {
-    console.log('editorDidMount', editor)
     editor.focus()
   }
 
