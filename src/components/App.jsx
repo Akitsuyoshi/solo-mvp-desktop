@@ -43,26 +43,27 @@ class App extends Component {
   }
 
   fetchMediumUser = () => {
-    const url = 'https://api.medium.com/v1/me'
-    const authOption = {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_MEDIUM_API}`,
-        'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Accept-Charset': 'utf-8',
-      },
-    }
-    return fetch(url, authOption)
+    const url = 'https://c89x0czqbj.execute-api.us-east-2.amazonaws.com/Development/medium'
+    // const authOption = {
+    //   method: 'GET',
+    //   headers: {
+    //     Authorization: `Bearer ${process.env.REACT_APP_MEDIUM_API}`,
+    //     'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36',
+    //     'Content-Type': 'application/json',
+    //     Accept: 'application/json',
+    //     'Accept-Charset': 'utf-8',
+    //   },
+    // }
+    return fetch(url)
       .then(res => res.json())
       .then((json) => {
         console.log(json)
         this.setState({
-          imgUrl: json.data.imageUrl,
-          userID: json.data.id,
-          url: json.data.url,
+          imgUrl: json.imageUrl,
+          userID: json.id,
+          url: json.url,
         })
+        console.log(this.state)
       })
       .catch(err => err)
   }
@@ -72,7 +73,6 @@ class App extends Component {
       code,
       userID,
     } = this.state
-    console.log(userID, code)
     const info = {
       userId: userID,
       title,
