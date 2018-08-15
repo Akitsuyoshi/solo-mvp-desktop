@@ -3,7 +3,6 @@ import './App.css'
 
 import medium from 'medium-sdk'
 
-
 import client from '../authorizeMedium'
 
 class PostButton extends Component {

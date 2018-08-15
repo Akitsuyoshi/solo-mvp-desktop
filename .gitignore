@@ -13,6 +13,10 @@
 release/
 
 # misc
+awscli-bundle.zip
+/awscli-bundle
+get-pip.py
+
 .DS_Store
 .env
 .env.local
