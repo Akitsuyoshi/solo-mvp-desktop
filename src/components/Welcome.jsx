@@ -2,16 +2,12 @@ import React, { Component } from 'react'
 import MonacoEditor from 'react-monaco-editor'
 
 class Welcome extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  editorDidMount(editor, monaco) {
+  editorDidMount = (editor, monaco) => {
     editor.focus()
   }
 
   render() {
-    const { code } = this.props
+    const { code, onChange } = this.props
     const options = {
       selectOnLineNumbers: true,
       colorDecorators: true,
@@ -26,7 +22,7 @@ class Welcome extends Component {
         theme="vs-dark"
         value={code}
         options={options}
-        onChange={this.props.onChange}
+        onChange={onChange}
         editorDidMount={this.editorDidMount}
       />
     )

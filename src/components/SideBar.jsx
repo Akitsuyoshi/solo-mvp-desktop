@@ -1,23 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
+import HeaderButton from '../containers/buttonsForMarkdown/HeaderButton'
 
-import HeaderButton from './buttonsForMarkdown/HeaderButton'
-
-class SideBar extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      <div className="sidebar">
-        <a href={this.props.userUrl} target="_blank">
-          <img src={this.props.imgUrl} className="userImg" />
-        </a>
-        <HeaderButton data={this.props.data} onChange={this.props.onChange} />
-      </div>
-    )
-  }
+const SideBar = (props) => {
+  const { imgUrl, url } = props
+  return (
+    <div className="sidebar">
+      <a href={url} target="_blank" rel="noopener noreferrer">
+        <img src={imgUrl} className="userImg" alt="userPic" />
+      </a>
+      <HeaderButton />
+    </div>
+  )
 }
 
 export default SideBar

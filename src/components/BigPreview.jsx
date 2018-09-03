@@ -3,24 +3,17 @@ import React, { Component } from 'react'
 import * as mark from 'marked'
 
 class Preview extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
-    const code = mark(this.props.code, { sanitize: true })
-    document.getElementById('BigPreview').innerHTML = code
+    const { code } = this.props
+    const newCode = mark(code, { sanitize: true })
+    document.getElementById('BigPreview').innerHTML = newCode
   }
-
-  onClick = (e) => {
-    e.preventDefault()
-    this.props.onChangeClick()
-  };
 
   render() {
+    const { onClick } = this.props
     return (
       <div>
-        <div id="BigPreview" onClick={this.onClick} />
+        <div id="BigPreview" onClick={onClick} />
       </div>
     )
   }

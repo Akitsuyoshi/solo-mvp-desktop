@@ -1,24 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
 
-import medium from 'medium-sdk'
-
-import client from '../authorizeMedium'
-
-class PostButton extends Component {
-  onClick = () => {
-    this.props.onChangeByPost()
-  }
-
-  render() {
-    return (
-      <div>
-        <button className="post" onClick={this.onClick}>
+const PostButton = props => (
+  <div>
+    <button className="post" onClick={props.onClick}>
 Post to Medium
-        </button>
-      </div>
-    )
-  }
-}
+    </button>
+  </div>
+)
 
 export default PostButton
