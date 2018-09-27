@@ -11,7 +11,7 @@ Here is the link on [web version](https://pure-plateau-79856.herokuapp.com/)
 
 
 ### prerequisite
-1. installed yarn, asr, 
+1. installed node, yarn
 2. somewhat familiarity with react, and electron
 
 ### Here are tha instruction to use this api
@@ -23,13 +23,18 @@ Here is the link on [web version](https://pure-plateau-79856.herokuapp.com/)
 2 Install this repo, and yarn to install dependencies
 
 ```
-$ git install https://github.com/Akitsuyoshi/apiDocker
+$ git install https://github.com/Akitsuyoshi/solo-mvp-desktop
 $ yarn
 ```
 
-3 Start application in development mode
-
-`yarn dev`
+3 Start application in development mode to open the app on localhost and desktop app.
 
 
-this api is instructed in [my blog](https://medium.com/p/e63fb2631bfc/edit)
+`$ yarn dev`
+
+4 Build your app as desktop one
+
+`$ yarn build`
+
+###  Contribution
+If you are interested in this app, please contact me anytime at [twitter] (https://twitter.com/Akitsuyoshi244).
