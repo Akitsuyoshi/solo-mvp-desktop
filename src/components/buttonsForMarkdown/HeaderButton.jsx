@@ -4,16 +4,18 @@ import React, {
 import '../App.css'
 
 class HeaderButton extends Component {
-  onClick = (e) => {
-    this.props.onChange(`${this.props.data}#`, e)
+  onClick = () => {
+    const { onChange, code } = this.props
+    onChange(`${code}#`)
   }
 
   render() {
-    return (<div>
-      <button className="changeCode" onClick={this.onClick}>
-H
-      </button>
-            </div>
+    return (
+      <div>
+        <button className="changeCode" onClick={this.onClick}>
+          H
+        </button>
+      </div>
     )
   }
 }
