@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 <p align="center">
   <img alt="desktop" title="imgLogo" src="./src/readme/Screen Shot 2018-09-27 at 11.00.03.png" width="auto" height="200px">
+  <img alt="desktopWeb" title="webImgLogo" src="./src/readme/Screen Shot 2018-09-27 at 11.12.13.png" width="auto" height="200px">
 </p>
 
 
