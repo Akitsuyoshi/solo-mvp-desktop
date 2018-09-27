@@ -1,4 +1,4 @@
-import { SET_USER_INFO } from '../actions'
+import { SET_USER_INFO, POST_MEDIUM } from '../actions'
 
 const initialState = {
   imgUrl: '',
@@ -14,6 +14,21 @@ const reducer = (state = initialState, action) => {
       return {
         ...state, imgUrl, userID, url,
       }
+    }
+    case POST_MEDIUM: {
+      const {
+        code,
+        userID,
+      } = this.state
+      const info = {
+        userId: userID,
+        title,
+        contentFormat: medium.PostContentFormat.MARKDOWN,
+        content: code,
+        tags,
+        publishStatus: medium.PostPublishStatus.DRAFT,
+      }
+      return client.createPost(info, (err, post) => console.log(post))
     }
     default: {
       return state
