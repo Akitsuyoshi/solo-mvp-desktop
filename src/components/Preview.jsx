@@ -1,33 +1,26 @@
 import React, { Component } from 'react'
-
 import * as mark from 'marked'
 
 class Preview extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   componentDidMount() {
-    const code = mark(this.props.code, {
+    const { code } = this.props
+    const newCode = mark(code, {
       sanitize: true,
     })
-    document.getElementById('output').innerHTML = code
+    document.getElementById('output').innerHTML = newCode
   }
 
   componentDidUpdate() {
-    const code = mark(this.props.code, { sanitize: true })
-    document.getElementById('output').innerHTML = code
+    const { code } = this.props
+    const newCode = mark(code, { sanitize: true })
+    document.getElementById('output').innerHTML = newCode
   }
 
-  onClick = (e) => {
-    e.preventDefault()
-    this.props.onChangeClick()
-  };
-
   render() {
+    const { onClick } = this.props
     return (
       <div>
-        <div id="output" onClick={this.onClick} />
+        <div id="output" onClick={onClick} />
       </div>
     )
   }

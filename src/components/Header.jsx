@@ -1,16 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
 
-class Header extends Component {
-  render() {
-    return (
-      <div>
-        <div className="header">
-Reactron-Editor
-        </div>
-      </div>
-    )
-  }
-}
+const Header = () => (
+  <div>
+    <div className="header">
+Ractron-Editor
+    </div>
+  </div>
+)
 
 export default Header
