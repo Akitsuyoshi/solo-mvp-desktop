@@ -3,6 +3,9 @@
 This was created during my time as a student at Code Chrysalis.
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+<p align="center">
+  <img alt="desktop" title="imgLogo" src="./src/readme/Screen Shot 2018-09-27 at 11.00.03.png" width="auto" height="200px">
+</p>
 
 
 ### prerequisite
