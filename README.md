@@ -1,12 +1,15 @@
-# 
+#  Reactron Editor
 
 This was created during my time as a student at Code Chrysalis.
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 Here is the link on [web version](https://pure-plateau-79856.herokuapp.com/)
 
+The markdown editor on the left immediately reflect changes you make on the right as preview.
+
+
 <p align="center">
-  <img alt="desktop" title="imgLogo" src="./src/readme/Screen Shot 2018-09-27 at 11.00.03.png" width="auto" height="200px">
-  <img alt="desktopWeb" title="webImgLogo" src="./src/readme/Screen Shot 2018-09-27 at 11.12.13.png" width="auto" height="200px">
+  <img alt="desktop" title="imgLogo" src="./src/readme/Screen Shot 2018-09-27 at 11.00.03.png" width="auto" height="200px"  margin-right="10px">
+  <img alt="desktopWeb" title="webImgLogo" src="./src/readme/Screen Shot 2018-09-27 at 11.12.13.png" width="auto" height="200px" margin-left="10px">
 </p>
 
 
@@ -37,4 +40,4 @@ $ yarn
 `$ yarn build`
 
 ###  Contribution
-If you are interested in this app, please contact me anytime at [twitter] (https://twitter.com/Akitsuyoshi244).
+If you are interested in this app, please contact me anytime at [twitter](https://twitter.com/Akitsuyoshi244).
